@@ -1,0 +1,116 @@
+/* ------------------------------------------------ */
+/* ESTILOS DE CADA TEMA (conte-tema) */
+/* ------------------------------------------------ */
+.conte-tema {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.conte-tema h2 {
+    color: white;
+    text-decoration: underline;
+    border-bottom: 2px solid #3a3a3a;
+    padding-bottom: 8px;
+    margin-top: 0;
+    font-size: 1.8em;
+}
+
+.conte-tema h3 {
+    color: white;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+}
+
+.conte-tema p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+@media (max-width: 600px) {
+    .conte-tema {
+        margin: 0 20px 0 20px;
+    }
+}
+/* ------------------------------------------------ */
+/* ESTILOS PARA CÓDIGO Y ELEMENTOS EN LÍNEA */
+/* ------------------------------------------------ */
+strong {
+    color: #e0e0e0;
+}
+
+.conte-tema strong {
+    background-color: #000000;
+    padding: 2px 5px;
+    border-radius: 4px;
+    color: white;
+}
+
+/* ------------------------------------------------ */
+/* ESTILOS PARA COLOCAR LA LISTA Y LA IMAGEN LADO A LADO */
+/* ------------------------------------------------ */
+.directivas-layout {
+    display: flex; 
+    width: 80%;
+    gap: 20px; 
+    flex-wrap: wrap; 
+    margin-top: 15px;
+}
+
+.lista-directivas {
+    /* Ocupa el 50% del espacio */
+    flex: 1 1 45%; 
+    min-width: 250px;
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 15px;
+    text-align: left;
+}
+/* Ajuste de alineación para la lista de directivas (del código anterior) */
+.lista-directivas ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+.lista-directivas ul li {
+    padding: 5px 0;
+    position: relative;
+    padding-left: 20px; 
+}
+
+.lista-directivas ul li::before {
+    content: '→';
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* ------------------------------------------------ */
+/* AJUSTES PARA LA IMAGEN DENTRO DEL CONTENEDOR */
+/* ------------------------------------------------ */
+.ejemplo-robots {
+    /* Ocupa el otro 50% del espacio */
+    flex: 1 1 45%; 
+    min-width: 250px;
+    padding-top: 5px; /* Pequeño ajuste visual */
+}
+
+.info-img {
+    /* Hace que la imagen ocupe todo el ancho de su contenedor, manteniendo proporciones */
+    max-width: 100%; 
+    height: auto; 
+    display: block; /* Elimina el espacio extra debajo de la imagen */
+    margin: 15px auto 0 auto; /* Centra la imagen horizontalmente */
+    border: 1px solid #555; /* Borde sutil para destacar el ejemplo */
+    border-radius: 5px;
+}
+
+/* Línea divisoria */
+hr {
+    border: none;
+    border-top: 1px solid #333;
+    margin: 20px 0;
+}

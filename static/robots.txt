@@ -1,0 +1,26 @@
+# Bots permitido para scraping
+# NOTA: El orden correcto de estructura de un txt robots es User-agent, Disallow, Allow, Crawl-delay, Sitemap, etc. Cualquier otra estructura esta mal hecha, al menos para las librerias de robotparser
+# Mas info: https://scrape.do/blog/robots-txt
+User-agent: *
+Disallow: /admin
+Disallow: /scraping/zonaNoPermitida
+
+Allow: /
+Allow: /scraping/zonaPermitida
+
+User-agent: bot1
+User-agent: bot2
+Disallow: /scraping/zonaPermitida
+Disallow: /scraping/verificacion
+Disallow: /scraping/scrapearPagina
+Disallow: /scraping/herramientaScraping
+Allow: /
+
+User-agent: BotAutorizado
+Allow: /
+
+User-agent: *
+Disallow: /exchange/dolarHoy
+Disallow: /scraping/verificacion
+Disallow: /scraping/scrapearPagina
+Disallow: /scraping/herramientaScraping

@@ -1,0 +1,100 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block style %}
+    <link href="{% static 'css/infoScraping.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block title %}Tutorial Scraping{% endblock %}
+
+{% block bodytitulo %}Como hacer Scraping{% endblock %}
+
+{% block body %}
+    <div class="contenedor-menu">
+        <div class="conte-tema">
+            <h2>Robots.txt: Protocolo de Acceso</h2>
+            <p>
+                Para iniciar la recopilación de información estructurada de sitios web, es fundamental tener conocimiento de la existencia y propósito de los archivos <strong>robots.txt</strong>.
+            </p>
+            <p>
+                Estos archivos de protocolo contienen las indicaciones y restricciones admitidas por los dueños del sitio. En ellos, se declara qué <strong>agentes de usuario (User-agents)</strong> tienen permiso para rastrear (o se les restringe) las distintas secciones o rutas del dominio web. Para poder ver dicho archivo de un sitio web, se accede por defecto: http(s)://dominio/robots.txt.
+            </p>
+            <img class="info-img"src="{% static 'img/robots-autorizacion.gif' %}" alt="gif demostrativo de permisos">
+            <p>
+                En caso de sobrecargar el servidor o ignorar las directivas de exclusión, es posible que el sitio aplique medidas de mitigación, como el <strong>bloqueo de su dirección IP</strong>. La realizacion de estas actividades es bajo su propio riesgo.
+            </p>
+
+            <h3>Estructura y Directivas</h3>
+            <p>
+                El formato más común que rige la automatización de scraping es la estructura estándar en los archivos robots.txt, que se basa en pares de directivas:
+            </p>
+            <div class="directivas-layout">
+                <div class="lista-directivas">
+                    <ul>
+                        <li>
+                            <strong>User-agent:</strong> Define el nombre del bot al que se aplican las reglas (ej: Googlebot, *, MiScraperPersonal).
+                        </li>
+                        <li>
+                            <strong>Disallow:</strong> Indica la ruta que el "User-agent" no debe rastrear (ej: /secreto/).
+                        </li>
+                        <li>
+                            <strong>Allow:</strong> Se usa para especificar excepciones dentro de una ruta bloqueada (ej., Disallow: /fotos/ y Allow: /fotos/publicas).
+                        </li>
+                        <li>
+                            <strong>Crawl-delay:</strong> Indica el tiempo mínimo (en segundos) que debe esperar su bot entre cada solicitud. <strong>Ignorar esto es la principal causa de bloqueo.</strong>
+                        </li>
+                        <li>
+                            <strong>Others:</strong> Otras especificaciones tanto de los agentes como del propio sitio.
+                        </li>
+                    </ul>
+                </div>
+                <div class="ejemplo-robots">
+                    
+                    <img class="info-img"src="{% static 'img/robots.png' %}" alt="ejemplo de robots.txt">
+                </div>
+                <p>
+                    La herramienta disponible en este sitio por la validación de esta estructura estándar, en caso de que el archivo robots.txt esté desordenado, el algoritmo implementado se encargará de reestructurar el texto, para que de esta forma sea leíble para la librería RobotParser de forma correcta.
+                </p>
+            </div>
+        </div>
+
+        <hr>
+        
+        <div class="conte-tema">
+            <h2>Conocimientos Básicos Necesarios</h2>
+            <p>
+                Para poder scrapear de manera efectiva, necesitamos un conocimiento básico previo en la estructura de la página, especialmente en <strong>Elementos HTML, sus atributos y CSS</strong>. Este conocimiento nos permitirá definir correctamente los selectores de datos a extraer.
+            </p>
+            <img class="info-img"src="{% static 'img/inspeccion-Elemento.gif' %}" alt="gif de producto a scrapear">
+            <p>
+                Para esta tarea, es indispensable explorar y probar los elementos de la página que deseamos rastrear. De esta manera, podremos definir puntualmente los selectores (por ejemplo, "div.cardProducto" o "#id-precio") para extraer la información de forma correcta.
+            </p>
+            <img class="info-img"src="{% static 'img/herramienta-Inspeccion.png' %}" alt="imagen del inspeccion de elementos">
+            <p>
+                Para facilitar la busqueda, se debe usar la <strong>Herramienta de Inspección</strong> del navegador. Con ella, podrá ver los patrones de diseño y las clases/IDs de cada elemento para posteriormente definirlos como una instrucción de búsqueda. Si bien al comienzo se requiere un esfuerzo de configuración enorme por página, pero una vez obtenidos los patrones, se puede aplicar fácilmente la automatización de estas, para distintas tareas.
+            </p>
+        </div>
+
+        <hr>
+        
+        <div class="conte-tema">
+            <h2>Herramienta Preparada</h2>
+            <p>
+                En este sitio tendrá a su disposición una herramienta de "scraping" básica, capaz de verificar los permisos mediante una <strong>"URL"</strong> y un <strong>"User-agent"</strong>, mediante la lectura del respectivo archivo <strong>"robots.txt"</strong> del sitio a consultar.
+            </p>
+            <p>
+                La herramienta le permite indicar los parámetros de información que requiera extraer de un sitio, siempre y cuando logre encontrar el elemento contenedor que defina el patrón de diseño de dicha información estructurada.
+            </p>
+            <p>
+                Una vez extraída la información, los resultados se presentan directamente en la consola del navegador como un <strong>JSON</strong> (JavaScript Object Notation).
+            </p>
+            <p>
+                El sitio tambien cuenta con una pagina simple para scrapear (a modo de practica), archivo robots.txt (con permisos establecidos) y una pagina con configuraciones de scraping ya establecidas para mostrar en pantalla de forma dinamica (similar al comportamiento de frameworks como React.js)
+            </p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}

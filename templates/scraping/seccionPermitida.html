@@ -1,0 +1,82 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block style %}
+    <link href="{% static 'css/cardProduct.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block title %}Scrapeable{% endblock %}
+
+{% block bodytitulo %}Página Scrapeable{% endblock %}
+
+{% block body %}
+<div class="contenedor-menu">
+    <h2>Lista de Productos para Scraping</h2>
+    
+    <div class="producto-card" data-product-id="4589">
+        
+        <div class="producto-columna-izq">
+            <img id="img1" src="{% static 'img/laptop.png' %}" alt="Imagen del producto" class="imagen-producto">
+        </div>
+        
+        <div class="producto-columna-der">
+            
+            <div class="producto-fila-top">
+                <h3 class="nombre-producto">Laptop Gaming Modelo X9</h3>
+                <span class="stock-status en-stock">DISPONIBLE</span>
+            </div>
+            
+            <div class="info-bloque descripcion-bloque">
+                <span class="info-label">Descripción</span>
+                <p class="descripcion">Potente laptop con i7 y 16GB de RAM. Ideal para juegos y trabajo pesado.</p>
+            </div>
+            
+            <div class="info-bloque precios-bloque">
+                <span class="info-label">Precio</span>
+                <div class="precios-contenedor">
+                    <span class="precio-regular old-price">2.500 USD</span> 
+                    <span class="precio-final">1.999 USD</span>
+                </div>
+            </div>
+            
+            <div class="link-bloque">
+                <a href="https://www.gigabyte.com/es/Laptop/X9" class="link-detalle btn-detalle" data-link-type="interno">Ver detalles</a>
+            </div>
+        </div>
+    </div>
+    <div class="producto-card" data-product-id="6211">
+        
+        <div class="producto-columna-izq">
+            <img id="img2" src="{% static 'img/monitor.jpg' %}" alt="Imagen del producto" class="imagen-producto">
+        </div>
+        
+        <div class="producto-columna-der">
+            
+            <div class="producto-fila-top">
+                <h3 class="nombre-producto">Monitor Ultrawide Pro</h3>
+                <span class="stock-status agotado">AGOTADO</span>
+            </div>
+            
+            <div class="info-bloque descripcion-bloque">
+                <span class="info-label">Descripción</span>
+                <p class="descripcion">Monitor 34 pulgadas, 144Hz. Perfecto para multitarea.</p>
+            </div>
+            
+            <div class="info-bloque precios-bloque">
+                <span class="info-label">Precio</span>
+                <div class="precios-contenedor">
+                    <span class="precio-final">500 USD</span>
+                </div>
+            </div>
+            
+            <div class="link-bloque">
+                <a href="https://www.mercadolibre.com.ar/monitor-ultrapanoramico-lg-29wq600w-ultrawide-panel/up/MLAU1321037369" class="link-detalle btn-detalle" data-link-type="interno">Ver detalles</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}

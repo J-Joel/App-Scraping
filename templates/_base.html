@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+    {% load static %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="{% static 'icon/iconoWeb.png' %}">
+        <link href="{% static 'css/base.css' %}" rel="stylesheet">
+        {% block style %}
+        
+        {% endblock %}
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    <body>
+        <section class="body-container">
+            <header class="panel-titu"><span id="tituRedi" data-url="{% url 'inicio' %}" class="nav-link panel-eff"><h1>{% block bodytitulo %}{% endblock %}</h1></span></header>
+            </aside>
+            <div class="panel-body panel-eff">
+                {% block body %}
+
+                {% endblock %}
+            </div>
+        </section>
+        <footer class="panel-footer">
+            <div>
+                <p>Advertencia: Por favor antes de scrapear algún sitio web, revise las secciones que no estén disponibles para esta finalidad en: ../robots.txt, de los respectivos URLs que se vayan a scrapear.</p>
+            </div>
+        </footer>
+        <div id="custom-tooltip" class="hidden"></div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="{% static 'js/base.js' %}" type="text/javascript"></script>
+        {% block scripts %}
+    
+        {% endblock %}
+    </body>
+</html>

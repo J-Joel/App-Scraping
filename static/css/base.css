@@ -1,0 +1,225 @@
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+body{
+    background-image: linear-gradient(to right, 
+    rgb(40, 40, 40), 
+    rgb(220, 220, 220),
+    rgb(40, 40, 40)
+    );
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/********************************************* CSS Panel Titulo ***********************************************************************/
+/* Panel cabezera */
+.panel-titu {
+    height: 5%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Contenedor del texto */
+.panel-titu span {
+    display: flex;
+    user-select: none; /* No permite ser seleccionado */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 50%;
+    height: 100%;
+    cursor: pointer
+}
+.panel-titu span a {
+    font-size: 35px;
+    
+}
+/****************************************************** Auto Responsive *************************************************************/
+@media (max-width: 600px) {
+    .panel-titu span,
+    .nav-link.panel-eff::after,
+    .nav-link.panel-eff::before,
+    .panel-titu {
+        width: 100%;
+        border-radius: 0;
+    }
+}
+/*************************************************************************************************************************************/
+/********************************************* Clase de efectos para paneles (Dinamico) **********************************************/
+.panel-eff {
+    position: relative;
+    border-radius: 30px;
+    transition: all .3s, filter 1s;
+}
+/* Primera capa de la clase efectos */
+.panel-eff::before{
+    content: '';
+    position: absolute;
+    width: calc(100%);
+    height: inherit;
+    border-radius: inherit;
+    background-color: rgba(255,255,255);
+    opacity: 0;
+    z-index: -2;
+    transition: all .3s, filter 1s, opacity .5s;
+}
+/* Segunda capa de la clase efectos */
+.panel-eff::after{
+    content: '';
+    position: absolute;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    border-radius: inherit;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+    transition: all .3s, filter 1s;
+}
+/* Efectos para la capas de la clase efecto */
+.panel-eff:hover::after {
+    filter: drop-shadow(0 0 10px rgb(0,0,0));
+}
+.panel-eff:hover::before {
+    opacity: 1;
+    filter: drop-shadow(0 0 5px rgb(255, 255, 255));
+}
+/* Efecto de seguimiento circular(Nececita js) */
+.nav-link{
+    background: radial-gradient(130px at var(--x,0) var(--y,0),white,rgba(0, 0, 0, 0.2)), transparent;
+    background-clip: text;
+}
+.nav-link:hover{
+    color:rgba(0, 0, 0, 0) !important;
+}
+/*************************************************************************************************************************************/
+/************************************************** CSS Contenedor Body **************************************************************/
+/* Propiedades del "body"(section) */
+.body-container {
+    margin: 3% 2% 2% 2%;
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    column-gap: 30px;
+    flex-direction: column;
+    height: auto;
+}
+/* Contenedor Principal */
+.panel-body {
+    margin: 10px 50px 10px 50px;
+    flex-grow: 1;
+    height: 100%;
+    overflow: hidden;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.contenedor-menu {
+    margin: 2% 0 2% 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 80%;
+}
+/****************************************************** Auto Responsive *************************************************************/
+@media (max-width: 600px) {
+    .contenedor-menu {
+        margin: 5% 0 5% 0;
+        width: 100%;
+    }
+    .panel-body.panel-eff {
+        border-radius: 0;
+    }
+    /* Contenedor del cuerpo */
+    .panel-body,
+    .body-container {
+        margin: 3% 0 2% 0;
+    }
+}
+/*************************************************************************************************************************************/
+/****************************************************** CSS FOOTER *******************************************************************/
+.panel-footer {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    position: relative;
+    bottom: auto;
+    margin-top: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: all .3s ease;
+    z-index: 1000;
+}
+/* Efecto sobre al pasar sobre el footer */
+.panel-footer:hover{
+    background-color: rgba(0, 0, 0, 0.7);
+}
+/* Contenedores div del footer */
+.panel-footer > div { /* El > indica estrictamente que afecte a los elementos hijos del primer elemento(Sin eso puede afectar a todos los elementos dentro del elemento contenedor) */
+    display: flex;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    /*margin: 2%;*/
+    width: 80%;
+    z-index: 2;
+}
+/****************************************************** Auto Responsive *************************************************************/
+@media (max-width: 991px) {
+    /* Contenedores del footer */
+    .panel-footer > div {
+        width: 75%;
+    }
+}
+@media (max-width: 600px) {
+    /* Footer base */
+    .panel-footer {
+        height: auto;
+    }
+}
+/*************************************************************************************************************************************/
+/****************************************************** CSS tooltip ******************************************************************/
+/* Estilos del Tooltip Personalizado */
+#custom-tooltip {
+    position: absolute;
+    z-index: 1000;
+    pointer-events: none; /* Permite hacer clic a través de él */
+    background-color: #444;
+    color: #fff;
+    border: 1px solid #666;
+    padding: 8px 12px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    max-width: 250px;
+    line-height: 1.4;
+    font-size: 14px;
+}
+
+#custom-tooltip.hidden {
+    display: none;
+}
+
+#custom-tooltip p {
+    margin: 3px 0;
+    padding-left: 10px;
+    position: relative;
+}
+
+#custom-tooltip p::before {
+    content: ""; 
+    position: absolute;
+    left: 0;
+    color: #a0a0a0;
+}

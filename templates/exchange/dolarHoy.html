@@ -1,0 +1,41 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block style %}
+    <link href="{% static 'css/dolar.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block title %}Dolar Hoy{% endblock %}
+
+{% block bodytitulo %}Valor del dolar{% endblock %}
+
+{% block body %}
+    <div class="contenedor-menu">
+        {% if paginas %}
+            <div class="contenedor-select">
+                <label for="selectorQuery">Selecciona una Configuración:</label>
+                <select id="selectorQuery" name="query">
+                    <option value="">-- Selecciona una página --</option>
+                    {% for pagina in paginas %}
+                        <option value="{{ pagina }}" 
+                                data-url="{{ pagina.url_target }}"
+                                data-agent="{{ pagina.user_agent }}"
+                                data-selector="{{ pagina.contenedor_selector }}"
+                                data-datos="{{ pagina.campos_a_extraer }}">
+                            {{ pagina.nombre_sitio }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div id="datosExtraidos">
+                
+            </div>
+        {% else %}
+            <p>No hay configuraciones disponibles.</p>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/dolar.js' %}" type="text/javascript"></script>
+{% endblock %}

@@ -1,0 +1,141 @@
+/* Contenedor Principal de la tarjeta */
+.producto-card {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Columna Izquierda (Contenedor de la Imagen) */
+.producto-columna-izq {
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white; 
+}
+
+/* Estilos específicos para la etiqueta <img> */
+.imagen-producto {
+    max-width: 100%; 
+    max-height: 100%; 
+    object-fit: contain; 
+}
+
+/* Columna Derecha (Información) */
+.producto-columna-der {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Fila Superior: Nombre y Disponibilidad */
+.producto-fila-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+/* Bloques de Información (Descripción, Precios, Links) */
+.info-bloque {
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.descripcion {
+    margin: 0;
+    padding-top: 5px;
+}
+
+.info-label {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    padding: 2px 8px;
+    background-color: #2b2b2b;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 3px;
+    z-index: 10;
+}
+
+.precio-regular.old-price {
+    text-decoration: line-through; 
+    font-size: 0.85em; 
+    color: #aaaaaa;
+    margin-right: 15px;
+}
+
+.precio-final {
+    font-size: 1.3em; 
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.precios-bloque {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.precios-contenedor {
+    display: flex;
+    align-items: baseline;
+}
+
+/* Estilos específicos de los datos */
+.nombre-producto {
+    flex-grow: 1;
+    margin: 0;
+}
+
+.stock-status {
+    padding: 5px 10px;
+    border: 1px solid white;
+    font-size: 0.8rem;
+}
+.en-stock {
+    background-color: green;
+}
+.agotado {
+    background-color: red;
+}
+
+/* Diseño del Botón */
+.btn-detalle {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    width: 80%;
+    padding: 10px 15px;
+    background-color: #3b3b3b;
+    color: white; 
+    border: 1px solid #777;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el ratón (Hover) */
+.btn-detalle:hover {
+    background-color: #555555;
+    border-color: rgb(255,255,255);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+}

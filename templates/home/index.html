@@ -1,0 +1,51 @@
+{% extends '_base.html' %} <!-- Carga el archivo HTML de base -->
+{% load static %} <!-- Carga la carpeta de static -->
+
+{% block style %} <!-- Bloque style encargado de importar/cargar librerias o archivos personales de CSS -->
+    <link href="{% static 'css/inicio.css' %}" rel="stylesheet">
+{% endblock %} <!-- Fin del bloque style-->
+
+{% block title %}Scraping{% endblock %} <!-- Bloque que modifica el titulo de la pestaña/pantalla -->
+
+{% block bodytitulo %}Scraping Tecnico{% endblock %}
+
+{% block body %}
+    <div class="contenedor-menu">
+        <div class="seccion-menu">
+            <div class="etiqueta-menu">
+                <span>Scraping</span>
+            </div>
+            
+            <div class="enlaces-menu">
+                <a href="{% url 'infoScraping' %}" class="enlace-item">Información sobre Scraping y del sitio web</a>
+                <a href="{% url 'zonaPermitida' %}" class="enlace-item">Página Scrapeable</a>
+                <a href="{% url 'zonaNoPermitida' %}" class="enlace-item">Página no Scrapeable</a>
+                <a href="{% url 'herramientaScraping' %}" class="enlace-item">Herramienta de scraping</a>
+            </div>
+        </div>
+        
+        <div class="seccion-menu">
+            <div class="etiqueta-menu">
+                <span>Exchange</span>
+            </div>
+            
+            <div class="enlaces-menu">
+                <a href="{% url 'dolarHoy' %}" class="enlace-item">Dolar hoy</a>
+            </div>
+        </div>
+        
+        <div class="seccion-menu">
+            <div class="etiqueta-menu">
+                <span>Robots</span>
+            </div>
+            
+            <div class="enlaces-menu">
+                <a href="{% url 'robotstxt' %}" class="enlace-item">Lee el Robots.txt</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %} <!-- Bloque scripts encargado de importa/cargar librerias o archivos personales JS -->
+
+{% endblock %} <!-- Fin del bloque scripts -->

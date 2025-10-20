@@ -1,0 +1,35 @@
+{% if resultados %}
+    <h4>Resultados del Scraping ({{ resultados|length }} items)</h4>
+    <table class="config-table">
+        <thead>
+            <tr>
+                {% for key in resultados.0.keys %}
+                    <th>{{ key|capfirst }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in resultados %}
+                <tr>
+                    {% for key, valor in item.items %}
+                        <td>
+                            {% if valor.texto and valor.href %}
+                                <a href="{{ valor.href }}" target="_blank" title="{{ valor.href }}">{{ valor.texto }}</a>
+                            {% elif valor is mapping %}
+                                <ul>
+                                    {% for sub_key, sub_valor in valor.items %}
+                                        <li><strong>{{ sub_key|capfirst }}:</strong> {{ sub_valor }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% else %}
+                                {{ valor }}
+                            {% endif %}
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p class="error-message">Scraping finalizado, pero no se obtuvieron resultados.</p>
+{% endif %}
