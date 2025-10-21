@@ -30,7 +30,7 @@ Linux/macOS (Bash/Zsh):
 ```
 Windows (CMD/PowerShell):
 ``` bash
-    .\venv\Scripts\activate
+    . .\venv\Scripts\activate
 ```
 *Si el entorno se activó correctamente, lo notará al ver el nombre de su entorno entre paréntesis en la terminal.*
 
