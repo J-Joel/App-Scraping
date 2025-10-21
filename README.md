@@ -54,12 +54,18 @@ Con todos los procedimientos realizados, el proyecto estará listo para ejecutar
 
 ## **Librerias utilizadas**:
 Todas las librerias utilizadas completamente, se encuentra en el archivo "requirements.txt"
+
 **Frontend: JavaScript**:
+
 - Jquery
-**Backend: Python**: 
+  
+**Backend: Python**:
+  
 - Django
 - Python-DotEnv *(Para variables de entorno, no se implemento)*
+  
 **Api**:
+  
 - DjangoRest
 - Python-DotEnv *(Para variables de entorno, no se implemento)*
 - BeautifulSoup4 *(Funciones de scraping)*
